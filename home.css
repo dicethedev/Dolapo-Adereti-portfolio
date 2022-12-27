@@ -1,0 +1,9 @@
+@import url('https://fonts.cdnfonts.com/css/darker-grotesque?styles=50578,50579,50574');
+:root{
+    --navbar-bg-color: #070606;
+    --body-bg-color: #0E0D0D;
+    --title-font-family: 'Darker Grotesque', sans-serif;
+    --title-text-color: #FFFFFF;
+    --body-text-color: #D4D4D4;
+    --underline-color: #AFAEAE;
+}
