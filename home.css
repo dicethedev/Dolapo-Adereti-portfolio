@@ -590,6 +590,9 @@ footer .footer-text{
     .hero-image-desktop{
         display: none;
     }
+    .hero-animation{
+        font-size: 1.8rem;
+    }
     
     /* section-two */
     /* .nu */
