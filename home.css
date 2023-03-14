@@ -27,6 +27,25 @@ body{
     color: var(--title-text-color);
     font-family: var(--title-font-family);
 }
+.slideLeft{
+    opacity: 0.8;
+    filter: blur(1px);
+    transform: translateX(-10%);
+    transition: all 2s;
+    /* z-index: -5; */
+}
+.slideRight{
+    opacity: 0.8;
+    filter: blur(1px);
+    transform: translateX(10%);
+    transition: all 2s;
+    /* z-index: -5; */
+}
+.show{
+    opacity: 1;
+    filter: blur(0);
+    transform: translate(0);
+}
 img{
     max-width: 100%;
     height: auto;
@@ -75,7 +94,9 @@ img{
 .navbar .pages ul li a.presentpage{
     font-weight: bolder;
     transform: scale(1.125);
-    text-decoration: line-through;
+    text-decoration: underline;
+    text-decoration-style: wavy;
+    text-decoration-color: #dbadff;
     text-decoration-thickness: .2rem;
 }
 .navbar #hamburger{
@@ -139,6 +160,7 @@ img{
 .hero-text-sub{
     color: var(--underline-color);
     margin-block: 3rem;
+    font-size: 2.5rem;
     /* width: 50%; */
 }
 .hero-text-link{
@@ -205,6 +227,7 @@ img{
 /* selected works section */
 .selected-works{
     background-color: var(--body-bg-color);
+    overflow: hidden;
 }
 .section-container{
     width: 80%;
@@ -220,7 +243,7 @@ img{
     display: flex;
     justify-content: space-between;
     margin-block: 5rem;
-    gap: 2rem;
+    gap: 4rem;
 }
 .flex-image{
     overflow: hidden;
@@ -255,8 +278,9 @@ img{
     display: flex;
     gap: .75rem;
     cursor: pointer;
-    color: var(--body-text-color);
+    color: var(--title-text-color);
     width: fit-content;
+    font-weight: 600;
     /* justify-content: space-evenly; */
 }
 .flex-text-link a{
@@ -311,17 +335,21 @@ img{
 /* footer */
 footer{
     background-color: var(--title-text-color);
-    color: var(--navbar-bg-color);
+    /* color: var(--navbar-bg-color); */
+    color: #000;
     padding: 5rem;
 }
 .footer{
     display: flex;
     justify-content: space-between;
+    gap: 5rem;
+    /* align-items: flex-start; */
 }
 .footer .name{
     font-size: 2rem;
     color: #000;
     position: relative;
+    margin-top: 1rem;
 }
 .footer .name img{
     position: absolute;
@@ -340,12 +368,14 @@ footer{
     font-size: 2.5rem;
 }
 .footer ul.reach-out :nth-child(2){
-    font-weight: 300;
+    font-weight: 400;
+    color: #000;
 }
 .footer ul.reach-out :nth-child(3){
     font-size: 2rem;
     font-weight: 600;
     color: var(--navbar-bg-color);
+    margin-top: 1.5rem;
 }
 .footer ul.reach-out .mail-link{
     color: inherit;
@@ -353,6 +383,7 @@ footer{
 .footer .connect p{
     font-size: 2.2rem;
     font-weight: 500;
+    white-space: nowrap;
 }
 .footer .connect .socials{
     list-style: none;
@@ -367,6 +398,12 @@ footer{
     text-decoration: none;
     display: flex;
     gap: 1rem;
+    transition: color 500ms linear,
+                font-weight 200ms ease;
+}
+.footer .connect .socials li a:hover{
+    font-weight: 600;
+    /* font-size: 2.5rem; */
 }
 .footer .connect .socials li a:hover .socials-arrow{
     transform: translateY(-10%);
@@ -404,6 +441,7 @@ footer .footer-text{
     font-weight: 500;
     text-align: center;
     margin-top: 5rem;
+    white-space: nowrap;
 }
 
 /* media queries for responsiveness */
@@ -461,6 +499,10 @@ footer .footer-text{
         animation: slide 25s linear infinite alternate; 
     }
     /* footer responsiveness */
+    .footer{
+        /* display: grid; */
+        grid-template-columns: auto auto auto;
+    }
     .footer .connect .socials{
         flex-direction: column;
     }
@@ -508,33 +550,40 @@ footer .footer-text{
         padding-bottom: 3rem;
     }
     .design-shots .animation-box{
-        animation: slide 15s linear infinite alternate; 
+        animation: slide 25s linear infinite alternate; 
+        gap: 1rem;
     }
     .design-shots .animation-box img{
         max-width: 300px;
+        margin-bottom: 1rem;
     }
     
 }
 @media (max-width: 660px) { 
     /* navbar responsiveness */
     .navbar{
-        position: relative;
+        position: sticky;
+        top: 0;
+        left: 0;
         z-index: 20;
+        min-height: 8rem;
     }  
     .navbar .pages.responsive{
         /* transform: translate(0 0); */
         opacity: 1;
+        display: block;
     }
     .navbar .pages{
         position: absolute;
-        top: 10rem;
+        top: 8rem;
         left: 0;
         background-color: var(--body-bg-color);
         width: 100%;
         z-index: 10;
         /* transform: translate(0 -100%); */
         opacity: 0;
-        transition: 1s ease-in-out;
+        display: none;
+        transition: 500ms ease;
     }
     .navbar .pages ul{
         display: block;
@@ -552,30 +601,31 @@ footer .footer-text{
     .navbar #hamburger img{
         display: block;
         padding: .25rem 0;
+        transition: transform 500ms ease;
     }
     .navbar #hamburger.active :nth-child(1){
-         transform: rotate(45deg) translate(6px, 12px);
+         transform: rotate(45deg) translate(5.75px, 12.5px);
     }
     .navbar #hamburger.active :nth-child(2){
         opacity: 0;
     }
     .navbar #hamburger.active :nth-child(3){
-         transform: rotate(-45deg) translate(-2px, -7px);
+         transform: rotate(-45deg) translate(-2px, -6.5px);
     }
 
     /* hero-section responsiveness */
     .hero-text-title{
         width: fit-content;
         flex-direction: column;
-        margin-inline: auto;
-        text-align: center;
+        /* margin-inline: auto; */
+        /* text-align: center; */
     }
     .hero-text-title marquee{
         padding-inline: 0;
-        text-align: center;
+        /* text-align: center; */
     }
     .hero-text-sub{
-        text-align: center;
+        /* text-align: center; */
         margin-top: 1rem;
         margin-bottom: 5rem;
     }
@@ -585,7 +635,7 @@ footer .footer-text{
     }
     .hero-image-mobile img{
         display: block;
-        margin-inline: auto;
+        /* margin-inline: auto; */
     }
     .hero-image-desktop{
         display: none;
@@ -593,10 +643,7 @@ footer .footer-text{
     .hero-animation{
         font-size: 1.8rem;
     }
-    
-    /* section-two */
-    /* .nu */
-
+   
     /* footer responsiveness */
     .footer{
         flex-direction: column;
@@ -605,6 +652,9 @@ footer .footer-text{
     .footer .name{
         width: fit-content;
         margin-inline: auto;
+    }
+    .footer ul.reach-out .mail-link{
+        display: block;
     }
     .footer .connect .socials-mobile{
         display: flex;
@@ -630,13 +680,18 @@ footer .footer-text{
     .hero-text-title{
         font-size: 3.5rem;
     }
+    .hero-text-sub{
+        font-size: 2.5rem;
+    }
     
     /* design-shots responsiveness */
     .design-shots .animation-box{
-        animation: slide 10s linear infinite alternate; 
+        animation: slide 15s linear infinite alternate;
+        gap: .5rem; 
     }
     .design-shots .animation-box img{
         max-width: 200px;
+        margin-bottom: .5rem;
     }
 }
 

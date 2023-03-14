@@ -29,14 +29,22 @@ body{
     font-family: var(--title-font-family);
     background-color: #1E1E1E;
 }
-
+img{
+    max-width: 100%;
+    height: auto;
+}
 /* animate on scroll styles */
 .hidden{
-    opacity: 0;
+    opacity: 0.8;
     filter: blur(1px);
     transform: translateY(20%);
     transition: all 2s;
     /* z-index: -5; */
+}
+.show{
+    opacity: 1;
+    filter: blur(0);
+    transform: translate(0);
 }
 /* .hiddenImage{
     opacity: 0;
@@ -44,11 +52,6 @@ body{
     transform: translateX(-100%);
     transition: all 1s;
 } */
-.show{
-    opacity: 1;
-    filter: blur(0);
-    transform: translate(0);
-}
 
 /* navbar styling */
 .navbar{
@@ -90,13 +93,16 @@ body{
 .navbar .pages ul li a.presentpage{
     font-weight: bolder;
     transform: scale(1.125);
-    text-decoration: line-through;
+    text-decoration: underline;
+    text-decoration-style: wavy;
+    text-decoration-color: #dbadff;
     text-decoration-thickness: .2rem;
 }
 .navbar #hamburger{
     display: none;
     /* transition: 2s ease; */
 }
+
 
 
 /* hero section styling */
@@ -145,7 +151,7 @@ body{
     font-size: 2.5rem;
 }
 .hero-text-sub p{
-    /* margin-block: 3.5rem; */
+    margin-block: 3.5rem;
 }
 
 
@@ -197,16 +203,16 @@ body{
     font-size: 6.4rem;
     font-family: var(--created2create-font-family);
 }
-.section3-text{
+.section3-text, .podcast-link{
     font-size: 2.5rem;
 }
-.section3-text a{
+.section3-text a, .section4 a{
     color: inherit;
     display: inline-block;
     border-bottom: 1px solid;
     text-decoration: none;
 }
-.resume-link{
+.resume-link, .podcast-link{
     display: flex;
     gap: .75rem;
     cursor: pointer;
@@ -218,7 +224,8 @@ body{
     transition: transform 300ms ease;
     align-self: end;
 }
-.resume-link:hover .arrow-right{
+.resume-link:hover .arrow-right,
+.podcast-link:hover .arrow-right{
     transform: translateX(-.75rem);
 }
 
@@ -240,6 +247,9 @@ body{
     font-size: 2.8rem;
     margin-bottom: 3rem;
 }
+.podcast-link{
+    margin-bottom: 5rem;
+}
 .section4-images{
     display: flex;
 }
@@ -255,17 +265,21 @@ body{
 /* footer */
 footer{
     background-color: var(--title-text-color);
-    color: var(--navbar-bg-color);
+    /* color: var(--navbar-bg-color); */
+    color: #000;
     padding: 5rem;
 }
 .footer{
     display: flex;
     justify-content: space-between;
+    gap: 5rem;
+    /* align-items: flex-start; */
 }
 .footer .name{
     font-size: 2rem;
     color: #000;
     position: relative;
+    margin-top: 1rem;
 }
 .footer .name img{
     position: absolute;
@@ -284,12 +298,14 @@ footer{
     font-size: 2.5rem;
 }
 .footer ul.reach-out :nth-child(2){
-    font-weight: 300;
+    font-weight: 400;
+    color: #000;
 }
 .footer ul.reach-out :nth-child(3){
     font-size: 2rem;
     font-weight: 600;
     color: var(--navbar-bg-color);
+    margin-top: 1.5rem;
 }
 .footer ul.reach-out .mail-link{
     color: inherit;
@@ -297,6 +313,7 @@ footer{
 .footer .connect p{
     font-size: 2.2rem;
     font-weight: 500;
+    white-space: nowrap;
 }
 .footer .connect .socials{
     list-style: none;
@@ -311,6 +328,12 @@ footer{
     text-decoration: none;
     display: flex;
     gap: 1rem;
+    transition: color 500ms linear,
+                font-weight 200ms ease;
+}
+.footer .connect .socials li a:hover{
+    font-weight: 600;
+    /* font-size: 2.5rem; */
 }
 .footer .connect .socials li a:hover .socials-arrow{
     transform: translateY(-10%);
@@ -343,12 +366,12 @@ footer{
     transform: scale(1.1);
 }
 
-
 footer .footer-text{
     font-size: 2.2rem;
     font-weight: 500;
     text-align: center;
     margin-top: 5rem;
+    white-space: nowrap;
 }
 
 /* media queries for responsiveness */
@@ -373,6 +396,10 @@ footer .footer-text{
     }
 
     /* footer responsiveness */
+    .footer{
+        /* display: grid; */
+        grid-template-columns: auto auto auto;
+    }
     .footer .connect .socials{
         flex-direction: column;
     }
@@ -401,25 +428,31 @@ footer .footer-text{
      .hero-container{
         flex-direction: column;
      }
-    /* navbar responsiveness */
+
+     /* navbar responsiveness */
     .navbar{
-        position: relative;
+        position: sticky;
+        top: 0;
+        left: 0;
         z-index: 20;
+        min-height: 8rem;
     }  
     .navbar .pages.responsive{
         /* transform: translate(0 0); */
         opacity: 1;
+        display: block;
     }
     .navbar .pages{
         position: absolute;
-        top: 10rem;
+        top: 8rem;
         left: 0;
         background-color: var(--body-bg-color);
         width: 100%;
         z-index: 10;
         /* transform: translate(0 -100%); */
         opacity: 0;
-        transition: 1s ease-in-out;
+        display: none;
+        transition: 500ms ease;
     }
     .navbar .pages ul{
         display: block;
@@ -437,18 +470,49 @@ footer .footer-text{
     .navbar #hamburger img{
         display: block;
         padding: .25rem 0;
+        transition: transform 500ms ease;
     }
     .navbar #hamburger.active :nth-child(1){
-         transform: rotate(45deg) translate(6px, 12px);
+         transform: rotate(45deg) translate(5.75px, 12.5px);
     }
     .navbar #hamburger.active :nth-child(2){
         opacity: 0;
     }
     .navbar #hamburger.active :nth-child(3){
-         transform: rotate(-45deg) translate(-2px, -7px);
+         transform: rotate(-45deg) translate(-2px, -6.5px);
     }
 
-    
+    /* hero-section responsiveness */
+    .hero-text-title{
+        width: fit-content;
+        flex-direction: column;
+        /* margin-inline: auto; */
+        /* text-align: center; */
+    }
+    .hero-text-title marquee{
+        padding-inline: 0;
+        /* text-align: center; */
+    }
+    .hero-text-sub{
+        /* text-align: center; */
+        margin-top: 1rem;
+        margin-bottom: 5rem;
+    }
+    .hero-image-mobile{
+        display: block;
+        margin-block: 2rem;
+    }
+    .hero-image-mobile img{
+        display: block;
+        /* margin-inline: auto; */
+    }
+    .hero-image-desktop{
+        display: none;
+    }
+    .hero-animation{
+        font-size: 1.8rem;
+    }
+   
     /* footer responsiveness */
     .footer{
         flex-direction: column;
@@ -457,6 +521,9 @@ footer .footer-text{
     .footer .name{
         width: fit-content;
         margin-inline: auto;
+    }
+    .footer ul.reach-out .mail-link{
+        display: block;
     }
     .footer .connect .socials-mobile{
         display: flex;
