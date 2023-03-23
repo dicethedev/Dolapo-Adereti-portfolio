@@ -9,12 +9,12 @@
 </head>
 <body>
     <nav class="navbar" id="navbar">
-        <div class="name">
+        <a href="index.html" class="name">
             <img src="./images/navbar-footer/white-line1.svg" class="name-signs1" alt="yoruba intonation signs">
             <img src="./images/navbar-footer/white-line1.svg" class="name-signs2" alt="yoruba intonation signs">
             <img src="./images/navbar-footer/white-line2.svg" class="name-signs3" alt="yoruba intonation signs">
             Adedolapo
-        </div>
+        </a>
         <div class="pages">
             <ul>
                 <li><a href="index.html">home</a></li>
@@ -29,7 +29,7 @@
         </div>
     </nav>
     <section class="hero">
-        <img class='mobile-image' src="./images/travlr/travlr-hero.png" alt="">
+        <img id='mobile-image' src="./images/travlr/travlr-hero.png" alt="">
         <img class='desktop-image' src="./images/travlr/Product preview travelr.png" alt="" class="hero-image">
     </section>
 
@@ -93,7 +93,6 @@
     </section>
 
     <section class="section-four">
-        <p class="section-pretitle">Starting out</p>
         <p class="section-title">Understanding the general feeling and thoughts toward travel planning.</p>
         <p>At the start of the process, I spoke to a friend who recently traveled and was sharing her experience about the planning process and how it was quite tedious considering it was a group trip. This conversation gave me an insight into the struggles experienced in trip planning, especially with group travel, so I had to speak to other travelers and people who’d like to travel to understand their travel planning expectations, experience, and their needs.</p>
         <p>To obtain this information, I did a virtual interview with 5 frequent travelers and a survey with 20 people who travel and some who haven't but are interested in doing so. I was interested in finding out about the process they typically go through when planning a trip, what difficulties they encounter, what changes they might make, and what expectations they have during the travel planning process and once they arrive at their destination.</p>
@@ -132,18 +131,20 @@
         <p class="section-pretitle">Creating the refined travel planning experience</p>
         <p class="section-title">Wireframing and Prototyping the Early Version</p>
         <p>Using the information architecture from the flow chart, I identified the pages and features required, so I drafted digital wireframes and created a prototype showing the functionalities and layout of the app content. This was to easily iterate on the layout and also get early feedback through usability testing.</p>
-        <div class="gif-container"><img src="./images/travlr/travelr-wireframe-full-vid.gif" alt=""></div>
+        <div class="gif-container different-college"><img src="./images/travlr/travelr-wireframe-full-vid.gif" alt=""></div>
 
-        <p class="section-title">Testing, first phase</p>
+        <p class="section-title margin-top">Testing, first phase</p>
         <p>While wireframing the trip plan page, i had 2 ideas for the layout which i designed and in order to validate the choice of one, i conducted an unmoderated A/B Testing using maze to understand user’s perspective on each.</p>
         <div class="image-container"><img src="./images/travlr/B Test.png" alt=""></div>
         <p class="big-text">The main insights from the process</p>
-        <ul>
-            <li>4 out of the 5 participants preferred screen B to Screen A and their reasons involved the ease of accessing all important information without going back and forth on the app.</li>
-        </ul>
+        <div class="list-container">
+            <ul>
+                <li>4 out of the 5 participants preferred screen B to Screen A and their reasons involved the ease of accessing all important information without going back and forth on the app.</li>
+            </ul> 
+        </div>
         <p class="bold-text">This led to an iteration to fit better usability and improve overall experience.</p>
 
-        <p class="section-title">Visual design guide</p>
+        <p class="section-title margin-top">Visual design guide</p>
         <p>After refining the low-fidelity designs, I started to create a style guide and system to guide the visual design process.</p>
         <p>The primary color, a gradient with a mix of orange and pink was chosen to give an exciting feel to the app, as it is involved in the early phase of a travel experience. The font family, Manrope was also chosen for clear readability and also to portray a slightly playful and friendly feel as a result of the rounded edges of the typefaces.</p>
         <div class="image-container"><img src="./images/travlr/Design-system.png" alt=""></div>
@@ -168,39 +169,46 @@
         <p class="section-title">Account and settings</p>
         <p>This shows the user’s account information page designed in a segmented order to make it easy to find information.</p>
         <div class="gif-container"><img src="./images/travlr/Account-and-settings.gif" alt=""></div>
+        <a class='prototype-link' href="https://www.figma.com/proto/NTiByMfTSiz5hIvJlNYWIP/Travelr-App?page-id=20%3A353&node-id=495%3A6462&viewport=346%2C-187%2C0.07&scaling=scale-down&starting-point-node-id=495%3A6592" class="dark-grey">View the full prototype here</a>
     </section>
 
     <section class="section-ten">
         <p class="section-title">Testing, second phase</p>
         <p>On completion of the high fidelity designs, i conducted a moderated usability study involving 7 participants remotely using maze. The goal was to identify usability issues and confusing areas in the product, and this was highly eye opening to areas where users had issues as opposed to how i thought certain things were intuitive.</p>
 
-        <p class="section-subtitle">Key Findings</p>
-        <p class="light-grey">The process involved 4 tasks and a system usability scale (SUS) at the end of the process</p>
-        <ul>
-            <li>4 out of 7 of the participants went off the expected path at the task of creating a new trip plan</li>
-            <li>3 out of 7 of the participants were confused on the difference between the functionalities of the explore and trip plan page while trying to achieve their main aim which is planning trips.</li>
-        </ul>
-
+        <div class="key-findings">
+           <p class="section-subtitle">Key Findings</p>
+            <p class="light-grey">The process involved 4 tasks and a system usability scale (SUS) at the end of the process</p>
+            
+            <div class="list-container">
+             <ul>
+                <li>4 out of 7 of the participants went off the expected path at the task of creating a new trip plan</li>
+                <li>3 out of 7 of the participants were confused on the difference between the functionalities of the explore and trip plan page while trying to achieve their main aim which is planning trips.</li>
+            </ul>   
+            </div> 
+        </div>
+        
+    
         <p class="section-subtitle">Refining the design</p>
         <div class="image-container"><img src="./images/travlr/Travelr usability img.png" alt=""></div>
     </section>
 
     <section class="conclusion">
         <p class="section-title">Conclusion :)</p>
-        <p>This project was a very exciting one for me because it involved and combined some of my favorite things [travel, exploration, and user experience]. I enjoyed the research and design phase, understanding the issues and fears people have around planning trips then crafting a solution to those issues.</p>
-        <p>Although I was unable to conduct a proper usability test due to time constraints, I conducted a survey with a few people physically around me to get feedbacks on the product and this generated positive feedbacks. Moving forward, I hope to conduct a usability test and get feedbacks on key points in the product. Overall I enjoyed working on this project.</p>
-        <p class="section-title">Next Project</p>
+        <p>This project was a very exciting one for me because it involved and combined some of my favorite things [travel, exploration, and user experience]. I enjoyed the research and design phase, understanding the issues and fears people have around planning trips then crafting a solution to those issues.  Going forward, I plan to conduct further usability tests to ensure the app features are easily accessible and useful for users.</p>
+
+        <p class="section-title margin-top">Next Project</p>
         <div class="image-container"><a href="reel.html"><img src="./images/travlr/preview-reel.png" alt=""></a></div>
     </section>
 
     <footer>
         <div class="footer">
-            <div class="name">
+            <a href="index.html" class="name">
                 <img src="./images/navbar-footer/black-line1.svg" class="name-signs1" alt="yoruba intonation signs">
                 <img src="./images/navbar-footer/black-line1.svg" class="name-signs2" alt="yoruba intonation signs">
                 <img src="./images/navbar-footer/black-line2.svg" class="name-signs3" alt="yoruba intonation signs">
                 Adedolapo
-            </div>
+            </a>
             <ul class="reach-out">
                 <li>Got an interesting project?</li>
                 <li>I can help you out!</li>
@@ -213,8 +221,8 @@
                         <a href="https://www.linkedin.com/in/dolapo-adereti/" class="socials-text linkedIn">
                             LinkedIn
                             <div href="" class="socials-arrow">
-                                <img src="./images/navbar-footer/arrowstroke.svg" alt="">
-                                <img class="arrow-stroke" src="./images/navbar-footer/arrowhead.svg" alt="">
+                                <img class="arrow" src="./images/navbar-footer/Initial arrow-1.png" alt="">
+                                <img class="arrow-hover" src="./images/navbar-footer/Hover arrow.png" alt="">
                             </div>
                         </a>
                     </li>
@@ -222,32 +230,32 @@
                         <a href="https://www.instagram.com/dsgn.bydee/" class="socials-text instagram">
                             Instagram
                             <div href="" class="socials-arrow">
-                                <img src="./images/navbar-footer/arrowstroke.svg" alt="">
-                                <img class="arrow-stroke" src="./images/navbar-footer/arrowhead.svg" alt="">
+                                <img class="arrow" src="./images/navbar-footer/Initial arrow-1.png" alt="">
+                                <img class="arrow-hover" src="./images/navbar-footer/Hover arrow-1.png" alt="">
                             </div>
                         </a>
                     </li>
                     <li>
-                        <a href="https://dribbble.com/Deee_" class="socials-text dribble">
-                            Dribble
+                        <a href="https://twitter.com/dsgnbydee" class="socials-text dribble">
+                            Twitter
                             <div href="" class="socials-arrow">
-                                <img src="./images/navbar-footer/arrowstroke.svg" alt="">
-                                <img class="arrow-stroke" src="./images/navbar-footer/arrowhead.svg" alt="">
+                                <img class="arrow" src="./images/navbar-footer/Initial arrow-1.png" alt="">
+                                <img class="arrow-hover" src="./images/navbar-footer/Hover arrow.png" alt="">
                             </div>
                         </a>
                     </li>
                 </ul>
                 <ul class="socials-mobile">
-                    <li><a href=""><img src="./images/navbar-footer/Dribble.svg" alt=""></a></li>
-                    <li><a href=""><img src="./images/navbar-footer/linkedin 2.svg" alt=""></a></li>
-                    <li><a href=""><img src="./images/navbar-footer/linkedIn.svg" alt=""></a></li>
+                    <li><a href="https://dribbble.com/Deee_"><img src="./images/navbar-footer/Dribble.svg" alt=""></a></li>
+                    <li><a href="https://www.instagram.com/dsgn.bydee/"><img src="./images/navbar-footer/linkedin 2.svg" alt=""></a></li>
+                    <li><a href="https://twitter.com/dsgnbydee"><img src="./images/navbar-footer/twitter.svg" alt=""></a></li>
                 </ul>
             </div>
             <a href="#navbar" class="back-to-top" id="back-to-top">
                 <img src="./images/homepage/arrow-up.svg" alt="">
             </a>
         </div>
-        <p class="footer-text">Made with love, Dee. <img src="./images/navbar-footer/love.svg" alt=""></p>
+        <p class="footer-text">Made with love, Dee. <img class="love-image" src="./images/navbar-footer/love.svg" alt=""></p>
     </footer>
 </body>
 </html>

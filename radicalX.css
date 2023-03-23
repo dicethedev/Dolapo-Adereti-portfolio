@@ -43,7 +43,7 @@ a{
     text-decoration: none;
     color: inherit;
 }
-p:not(.section-pretitle){
+p:not(.section-pretitle):not(.section-title){
     margin: 2rem 0;
 }
 .wavy-line{
@@ -68,6 +68,11 @@ section:not(.hero){
     width: 65%;
     margin: auto;
 }
+.section-pretitle{
+    margin-top: 7.5rem;
+    font-weight: 600;
+    font-size: 2.75rem;
+}
 .section-title{
     font-size: 4.4rem;
     font-weight: 600;
@@ -77,12 +82,12 @@ section:not(.hero){
     background-color: var(--gif-container-bg-color);
     padding: 4rem 0;
     text-align: center;
-    margin: 5rem 0;
+    margin: 2rem 0;
     /* border: 1rem solid red; */
     /* width: fit-content; */
 }
 .image-container{
-    margin: 5rem 0;
+    margin: 2rem 0;
     /* border: 1rem solid red; */
 }
 div.gif-container img,
@@ -99,12 +104,15 @@ div.image-container img{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    font-size: 2rem;
+    font-size: 2.2rem;
     padding-inline: 5rem;
     min-height: 10rem;
 }
 .navbar .name{
     position: relative;
+    color: var(--title-text-color);
+    text-decoration: none;
+    font-weight: 600;
 }
 .navbar .name img{
     position: absolute;
@@ -219,14 +227,21 @@ section.intro{
     /* height: .71rem; */
 }
 
-/* section-two */;
+/* section-two */
+.section-two .image-container{
+    margin-block: 3rem;
+}
 .section-two .image-container img{
     margin-inline: auto;
 }
+.section-two .section-title{
+    margin-top: 7.5rem;
+}
 
 /* section-three */
-.section-three .section-pretitle{
-    margin-top: 8rem;
+.section-three .section-pretitle,
+.section-three .section-title{
+    margin-top: 7.5rem;
 }
 
 /* section-four */
@@ -293,19 +308,17 @@ section.intro{
     font-size: 3.9rem;
 }
 .section-five a.dark-grey{
-    /* text-decoration: underline; */
+    text-decoration: underline;
 }
 
 /* conclusion-section */
-.conclusion-section{
-    margin-bottom: 7rem;
-}
 .conclusion-section .section-title{
     margin-top: 8rem;
 }
 .conclusion-section .image-container{
     overflow: hidden;
     width: fit-content;
+    margin-bottom: 7.5rem;
 }
 .conclusion-section .image-container img{
     display: block;
@@ -330,10 +343,12 @@ footer{
     /* align-items: flex-start; */
 }
 .footer .name{
-    font-size: 2rem;
+    font-size: 2.2rem;
+    font-weight: 600;
     color: #000;
     position: relative;
     margin-top: 1rem;
+    text-decoration: none;
 }
 .footer .name img{
     position: absolute;
@@ -368,6 +383,7 @@ footer{
     font-size: 2.2rem;
     font-weight: 500;
     white-space: nowrap;
+    margin-bottom: 2rem;
 }
 .footer .connect .socials{
     list-style: none;
@@ -389,25 +405,38 @@ footer{
     font-weight: 600;
     /* font-size: 2.5rem; */
 }
-.footer .connect .socials li a:hover .socials-arrow{
-    transform: translateY(-10%);
+.footer .connect .socials-arrow img.arrow-hover{
+    display: none;
 }
+
 .footer .connect .socials li a.linkedIn:hover{
     color: #0072B1;
 }
+.footer .connect .socials li a.linkedIn:hover img.arrow{
+    display: none;
+}
+.footer .connect .socials li a.linkedIn:hover img.arrow-hover{
+    display: block;
+}
+
 .footer .connect .socials li a.instagram:hover{
     color: #B63F3F;
 }
+.footer .connect .socials li a.instagram:hover img.arrow{
+    display: none;
+}
+.footer .connect .socials li a.instagram:hover img.arrow-hover{
+    display: block;
+}
+
 .footer .connect .socials li a.dribble:hover{
-    color: #9B2080;
+    color: #0072B1;
 }
-.footer .connect .socials li .socials-arrow{
-    position: relative;
+.footer .connect .socials li a.dribble:hover img.arrow{
+    display: none;
 }
-.footer .connect .socials li .socials-arrow .arrow-stroke{
-    position: absolute;
-    top: 9px;
-    left: 5.5px;
+.footer .connect .socials li a.dribble:hover img.arrow-hover{
+    display: block;
 }
 .footer .connect .socials-mobile{
     display: none;
@@ -609,7 +638,7 @@ footer .footer-text{
 @media (max-width:500px) { 
     /* general styles */
     body{
-        font-size: 1.6rem;
+        font-size: 2rem;
     }
     .section-pretitle,
     .big-text, .bigger-text{
@@ -646,7 +675,7 @@ footer .footer-text{
 }
 
 @media (min-width: 1124px) {
-    img:not(.footer img){
+    img:not(.footer img):not(.love-image){
         margin-inline: auto;
         display: block;
     }
