@@ -147,7 +147,9 @@ img{
     display: flex;
     /* white-space: nowrap; */
 }
-
+.hero-text-title p{
+    white-space: nowrap;
+}
 /* .animation-container {
     width: 100%;
     text-align: center;
@@ -155,10 +157,11 @@ img{
 
   .animation-text {
     display: inline-block;
-    font-size: 3.5rem;
+    /* font-size: 4.rem; */
     font-weight: 600;
     white-space: nowrap;
     overflow: hidden;
+    padding-left: 1rem;
   }
   
 /* .hero-text-title marquee{ */
